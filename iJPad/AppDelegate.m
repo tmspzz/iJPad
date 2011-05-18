@@ -110,6 +110,7 @@
 	[self removeStartupFlicker];
 	
 	// Run the intro Scene
+    _sharedClientController = [ClientController sharedClientController];
 	[[CCDirector sharedDirector] runWithScene: [HelloWorldLayer scene]];
 }
 
