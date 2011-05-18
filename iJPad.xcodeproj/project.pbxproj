@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A2B849C13840D6E002F9CA2 /* ClientController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2B849B13840D6E002F9CA2 /* ClientController.m */; };
 		8A5F03311383D3B10075619D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A5F03301383D3B10075619D /* QuartzCore.framework */; };
 		8A5F03331383D3B10075619D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A5F03321383D3B10075619D /* OpenGLES.framework */; };
 		8A5F03351383D3B10075619D /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A5F03341383D3B10075619D /* OpenAL.framework */; };
@@ -124,7 +125,6 @@
 		8A5F048E1383D3B30075619D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A5F048D1383D3B30075619D /* AppDelegate.m */; };
 		8A5F04911383D3B30075619D /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A5F04901383D3B30075619D /* RootViewController.m */; };
 		8A5F04941383D3B30075619D /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A5F04931383D3B30075619D /* HelloWorldLayer.m */; };
-		8A5F049C1383D4CE0075619D /* README in Resources */ = {isa = PBXBuildFile; fileRef = 8A5F049B1383D4CE0075619D /* README */; };
 		8A5F049F1383D5890075619D /* Pad.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A5F049E1383D5890075619D /* Pad.m */; };
 		8A5F04A41383D5A50075619D /* HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A5F04A31383D5A50075619D /* HUD.m */; };
 		8A5F04A81383DBA10075619D /* jumpButtonN.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A5F04A51383DBA10075619D /* jumpButtonN.png */; };
@@ -133,6 +133,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8A2B849A13840D6E002F9CA2 /* ClientController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientController.h; sourceTree = "<group>"; };
+		8A2B849B13840D6E002F9CA2 /* ClientController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClientController.m; sourceTree = "<group>"; };
 		8A5F032C1383D3B10075619D /* iJPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iJPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A5F03301383D3B10075619D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		8A5F03321383D3B10075619D /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -367,7 +369,6 @@
 		8A5F04921383D3B30075619D /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
 		8A5F04931383D3B30075619D /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
 		8A5F04951383D3B30075619D /* GameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
-		8A5F049B1383D4CE0075619D /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		8A5F049D1383D5890075619D /* Pad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pad.h; sourceTree = "<group>"; };
 		8A5F049E1383D5890075619D /* Pad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pad.m; sourceTree = "<group>"; };
 		8A5F04A01383D5940075619D /* PadProtocolDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PadProtocolDelegate.h; sourceTree = "<group>"; };
@@ -446,7 +447,8 @@
 				8A5F049D1383D5890075619D /* Pad.h */,
 				8A5F049E1383D5890075619D /* Pad.m */,
 				8A5F04A01383D5940075619D /* PadProtocolDelegate.h */,
-				8A5F049B1383D4CE0075619D /* README */,
+				8A2B849A13840D6E002F9CA2 /* ClientController.h */,
+				8A2B849B13840D6E002F9CA2 /* ClientController.m */,
 				8A5F03411383D3B10075619D /* Resources */,
 				8A5F03551383D3B10075619D /* cocos2d */,
 				8A5F04461383D3B20075619D /* CocosDenshion */,
@@ -787,7 +789,6 @@
 				8A5F034F1383D3B10075619D /* Icon.png in Resources */,
 				8A5F03511383D3B10075619D /* Icon@2x.png in Resources */,
 				8A5F03541383D3B10075619D /* iTunesArtwork in Resources */,
-				8A5F049C1383D4CE0075619D /* README in Resources */,
 				8A5F04A81383DBA10075619D /* jumpButtonN.png in Resources */,
 				8A5F04A91383DBA10075619D /* jumpButtonS.png in Resources */,
 				8A5F04AA1383DBA10075619D /* padP1.png in Resources */,
@@ -903,6 +904,7 @@
 				8A5F04941383D3B30075619D /* HelloWorldLayer.m in Sources */,
 				8A5F049F1383D5890075619D /* Pad.m in Sources */,
 				8A5F04A41383D5A50075619D /* HUD.m in Sources */,
+				8A2B849C13840D6E002F9CA2 /* ClientController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -996,6 +998,7 @@
 				8A5F049A1383D3B30075619D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
