@@ -16,6 +16,7 @@
 @implementation HelloWorldLayer
 
 @synthesize hud = _hud;
+@synthesize delegate = _delegate;
 
 +(CCScene *) scene
 {
@@ -61,63 +62,23 @@
 
 - (void) jumpActionForPad:(const int)padNumber{
     
-    switch (padNumber) {
-        case kPadP1:
-            break;
-        case kPadP2:
-            break;
-        default:
-            break;
+    if(_delegate && [_delegate respondsToSelector:@selector(willSendMessageWihActionType: forPad: withAction:)]){
+        
+        [_delegate willSendMessageWihActionType:kActionTypeButton forPad:padNumber withAction:kActionJump];
+        
     }
+
     
 }
 
 -(void) direction:(const int)direction forPad:(const int)pad{
     
-    switch (pad) {
-        case kPadP1:
-            switch (direction) {
-                case kDirRight:
-                    break;
-                case kDirDiagRightUp:
-                    break;
-                case kDirDiagRightDown:
-                    break;
-                case kDirDiagLeftUp:
-                    break;
-                case kDirLeft:
-                    break;
-                case kDirDiagLeftDown:
-                    break;
-                default:
-                    break;
-            }
-            break;
-            
-        case kPadP2:
-            switch (direction) {
-                case kDirRight:
-                    break;
-                case kDirDiagRightUp:
-                    break;
-                case kDirDiagRightDown:
-                    break;
-                case kDirDiagLeftUp:
-                    break;
-                case kDirLeft:
-                    break;
-                case kDirDiagLeftDown:
-                    break;
-                default:
-                    break;
-            }
-            break;
-            
-        default:
-            break;
+    if(_delegate && [_delegate respondsToSelector:@selector(willSendMessageWihActionType: forPad: withAction:)]){
+        
+        [_delegate willSendMessageWihActionType:kActionTypeButton forPad:pad withAction:direction];
+        
     }
-    
-    
+
 }
 
 

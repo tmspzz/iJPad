@@ -130,6 +130,14 @@
 		8A5F04A81383DBA10075619D /* jumpButtonN.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A5F04A51383DBA10075619D /* jumpButtonN.png */; };
 		8A5F04A91383DBA10075619D /* jumpButtonS.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A5F04A61383DBA10075619D /* jumpButtonS.png */; };
 		8A5F04AA1383DBA10075619D /* padP1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A5F04A71383DBA10075619D /* padP1.png */; };
+		8A6B5D5D13850C5B0033D6F1 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B5D5C13850C5B0033D6F1 /* AsyncSocket.m */; };
+		8A6B5D9D1385584C0033D6F1 /* TBMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B5D991385584C0033D6F1 /* TBMessage.m */; };
+		8A6B5D9E1385584C0033D6F1 /* TBMessageBroker.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B5D9C1385584C0033D6F1 /* TBMessageBroker.m */; };
+		8A6B5DA013855B690033D6F1 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6B5D9F13855B690033D6F1 /* CFNetwork.framework */; };
+		8A6B5DAC138565390033D6F1 /* PlayerSelectionScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B5DAB138565390033D6F1 /* PlayerSelectionScene.m */; };
+		8A6B5DBC13856FA90033D6F1 /* Player1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A6B5DBA13856FA90033D6F1 /* Player1.png */; };
+		8A6B5DBD13856FA90033D6F1 /* Player2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A6B5DBB13856FA90033D6F1 /* Player2.png */; };
+		8A6B5DBF1385701C0033D6F1 /* PlayerSel.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A6B5DBE1385701C0033D6F1 /* PlayerSel.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -378,6 +386,20 @@
 		8A5F04A51383DBA10075619D /* jumpButtonN.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jumpButtonN.png; sourceTree = "<group>"; };
 		8A5F04A61383DBA10075619D /* jumpButtonS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jumpButtonS.png; sourceTree = "<group>"; };
 		8A5F04A71383DBA10075619D /* padP1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = padP1.png; sourceTree = "<group>"; };
+		8A6B5D5B13850C5B0033D6F1 /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncSocket.h; sourceTree = "<group>"; };
+		8A6B5D5C13850C5B0033D6F1 /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncSocket.m; sourceTree = "<group>"; };
+		8A6B5D981385584C0033D6F1 /* TBMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBMessage.h; sourceTree = "<group>"; };
+		8A6B5D991385584C0033D6F1 /* TBMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBMessage.m; sourceTree = "<group>"; };
+		8A6B5D9A1385584C0033D6F1 /* TBMessageBrokerProtocolDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBMessageBrokerProtocolDelegate.h; sourceTree = "<group>"; };
+		8A6B5D9B1385584C0033D6F1 /* TBMessageBroker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBMessageBroker.h; sourceTree = "<group>"; };
+		8A6B5D9C1385584C0033D6F1 /* TBMessageBroker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBMessageBroker.m; sourceTree = "<group>"; };
+		8A6B5D9F13855B690033D6F1 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		8A6B5DA913855EC50033D6F1 /* TBActionPassingProtocolDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBActionPassingProtocolDelegate.h; sourceTree = "<group>"; };
+		8A6B5DAA138565380033D6F1 /* PlayerSelectionScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerSelectionScene.h; sourceTree = "<group>"; };
+		8A6B5DAB138565390033D6F1 /* PlayerSelectionScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerSelectionScene.m; sourceTree = "<group>"; };
+		8A6B5DBA13856FA90033D6F1 /* Player1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Player1.png; sourceTree = "<group>"; };
+		8A6B5DBB13856FA90033D6F1 /* Player2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Player2.png; sourceTree = "<group>"; };
+		8A6B5DBE1385701C0033D6F1 /* PlayerSel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlayerSel.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -385,6 +407,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A6B5DA013855B690033D6F1 /* CFNetwork.framework in Frameworks */,
 				8A5F03311383D3B10075619D /* QuartzCore.framework in Frameworks */,
 				8A5F03331383D3B10075619D /* OpenGLES.framework in Frameworks */,
 				8A5F03351383D3B10075619D /* OpenAL.framework in Frameworks */,
@@ -402,6 +425,7 @@
 		8A5F03211383D3B00075619D = {
 			isa = PBXGroup;
 			children = (
+				8A6B5D9F13855B690033D6F1 /* CFNetwork.framework */,
 				8A5F03401383D3B10075619D /* iJPad */,
 				8A5F032F1383D3B10075619D /* Frameworks */,
 				8A5F032D1383D3B10075619D /* Products */,
@@ -434,10 +458,20 @@
 		8A5F03401383D3B10075619D /* iJPad */ = {
 			isa = PBXGroup;
 			children = (
+				8A6B5D981385584C0033D6F1 /* TBMessage.h */,
+				8A6B5D991385584C0033D6F1 /* TBMessage.m */,
+				8A6B5D9A1385584C0033D6F1 /* TBMessageBrokerProtocolDelegate.h */,
+				8A6B5D9B1385584C0033D6F1 /* TBMessageBroker.h */,
+				8A6B5D9C1385584C0033D6F1 /* TBMessageBroker.m */,
+				8A6B5DA913855EC50033D6F1 /* TBActionPassingProtocolDelegate.h */,
+				8A6B5D5B13850C5B0033D6F1 /* AsyncSocket.h */,
+				8A6B5D5C13850C5B0033D6F1 /* AsyncSocket.m */,
 				8A5F048C1383D3B30075619D /* AppDelegate.h */,
 				8A5F048D1383D3B30075619D /* AppDelegate.m */,
 				8A5F048F1383D3B30075619D /* RootViewController.h */,
 				8A5F04901383D3B30075619D /* RootViewController.m */,
+				8A6B5DAA138565380033D6F1 /* PlayerSelectionScene.h */,
+				8A6B5DAB138565390033D6F1 /* PlayerSelectionScene.m */,
 				8A5F04921383D3B30075619D /* HelloWorldLayer.h */,
 				8A5F04931383D3B30075619D /* HelloWorldLayer.m */,
 				8A5F04951383D3B30075619D /* GameConfig.h */,
@@ -463,6 +497,9 @@
 		8A5F03411383D3B10075619D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8A6B5DBE1385701C0033D6F1 /* PlayerSel.png */,
+				8A6B5DBA13856FA90033D6F1 /* Player1.png */,
+				8A6B5DBB13856FA90033D6F1 /* Player2.png */,
 				8A5F04A51383DBA10075619D /* jumpButtonN.png */,
 				8A5F04A61383DBA10075619D /* jumpButtonS.png */,
 				8A5F04A71383DBA10075619D /* padP1.png */,
@@ -792,6 +829,9 @@
 				8A5F04A81383DBA10075619D /* jumpButtonN.png in Resources */,
 				8A5F04A91383DBA10075619D /* jumpButtonS.png in Resources */,
 				8A5F04AA1383DBA10075619D /* padP1.png in Resources */,
+				8A6B5DBC13856FA90033D6F1 /* Player1.png in Resources */,
+				8A6B5DBD13856FA90033D6F1 /* Player2.png in Resources */,
+				8A6B5DBF1385701C0033D6F1 /* PlayerSel.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -905,6 +945,10 @@
 				8A5F049F1383D5890075619D /* Pad.m in Sources */,
 				8A5F04A41383D5A50075619D /* HUD.m in Sources */,
 				8A2B849C13840D6E002F9CA2 /* ClientController.m in Sources */,
+				8A6B5D5D13850C5B0033D6F1 /* AsyncSocket.m in Sources */,
+				8A6B5D9D1385584C0033D6F1 /* TBMessage.m in Sources */,
+				8A6B5D9E1385584C0033D6F1 /* TBMessageBroker.m in Sources */,
+				8A6B5DAC138565390033D6F1 /* PlayerSelectionScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

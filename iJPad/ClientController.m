@@ -7,6 +7,7 @@
 //
 
 #import "ClientController.h"
+#import "TBMessage.h"
 
 
 @implementation ClientController
@@ -15,6 +16,8 @@
 @synthesize isConnected;
 @synthesize connectedService = _connectedService;
 @synthesize browser = _browser;
+@synthesize socket = _socket;
+@synthesize messageBroker = _messageBroker;
 
 static ClientController *_sharedClientController = nil;
 
@@ -70,13 +73,46 @@ static ClientController *_sharedClientController = nil;
     [self.browser searchForServicesOfType:@"_tommyBros._tcp." inDomain:@""];
 }
 
+-(void) willSendMessageWihActionType:(int) msgActionType forPad:(int) padNumber withAction:(int) action {
+    
+    TBMessage *newMessage = [TBMessage messageWithActionType: msgActionType forPad:padNumber withAction:action];
+    [self.messageBroker sendMessage:newMessage];
+}
+
 #pragma mark Memory Clean Up
 
 -(void)dealloc {
+    
     self.connectedService = nil;
     self.browser = nil;
     [_services release];
+    self.socket = nil;
+    self.messageBroker = nil;
     [super dealloc];
+}
+
+#pragma mark AsyncSocket Delegate Methods
+
+-(BOOL)onSocketWillConnect:(AsyncSocket *)sock {
+    if ( _messageBroker == nil ) {
+        [sock retain];
+        return YES;
+    }
+    return NO;
+}
+
+-(void)onSocket:(AsyncSocket *)sock didConnectToHost:(NSString *)host port:(UInt16)port {      
+    
+    TBMessageBroker *newBroker = [[[TBMessageBroker alloc] initWithAsyncSocket:sock] autorelease];
+    [sock release];
+    newBroker.delegate = self;
+    self.messageBroker = newBroker;
+    isConnected = YES;
+}
+
+-(void)onSocketDidDisconnect:(AsyncSocket *)sock {
+    
+    isConnected = NO;
 }
 
 #pragma mark Net Service Browser Delegate Methods
@@ -95,8 +131,12 @@ static ClientController *_sharedClientController = nil;
 
 -(void)netServiceDidResolveAddress:(NSNetService *)service 
 {
-    isConnected = YES;
+    NSError *error;
     self.connectedService = service;
+    self.socket = [[[AsyncSocket alloc] initWithDelegate:self] autorelease];
+    NSAssert(_socket == nil, @"Failed to allocate AsyncSocket");
+    [self.socket connectToAddress:service.addresses.lastObject error:&error];
+   
 }
 
 -(void)netService:(NSNetService *)service didNotResolve:(NSDictionary *)errorDict 

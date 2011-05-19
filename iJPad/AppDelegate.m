@@ -10,7 +10,7 @@
 
 #import "AppDelegate.h"
 #import "GameConfig.h"
-#import "HelloWorldLayer.h"
+#import "PlayerSelectionScene.h"
 #import "RootViewController.h"
 
 @implementation AppDelegate
@@ -66,6 +66,7 @@
 								   depthFormat:0						// GL_DEPTH_COMPONENT16_OES
 						];
 	
+    [glView setMultipleTouchEnabled:YES];
 	// attach the openglView to the director
 	[director setOpenGLView:glView];
 	
@@ -111,7 +112,7 @@
 	
 	// Run the intro Scene
     _sharedClientController = [ClientController sharedClientController];
-	[[CCDirector sharedDirector] runWithScene: [HelloWorldLayer scene]];
+	[[CCDirector sharedDirector] runWithScene: [PlayerSelectionScene node]];
 }
 
 
