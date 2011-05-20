@@ -400,6 +400,7 @@
 		8A6B5DBA13856FA90033D6F1 /* Player1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Player1.png; sourceTree = "<group>"; };
 		8A6B5DBB13856FA90033D6F1 /* Player2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Player2.png; sourceTree = "<group>"; };
 		8A6B5DBE1385701C0033D6F1 /* PlayerSel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlayerSel.png; sourceTree = "<group>"; };
+		8A9B870E138687AC008D924C /* ClientControllerProtocolDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientControllerProtocolDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -481,6 +482,7 @@
 				8A5F049D1383D5890075619D /* Pad.h */,
 				8A5F049E1383D5890075619D /* Pad.m */,
 				8A5F04A01383D5940075619D /* PadProtocolDelegate.h */,
+				8A9B870E138687AC008D924C /* ClientControllerProtocolDelegate.h */,
 				8A2B849A13840D6E002F9CA2 /* ClientController.h */,
 				8A2B849B13840D6E002F9CA2 /* ClientController.m */,
 				8A5F03411383D3B10075619D /* Resources */,

@@ -18,6 +18,7 @@
 @synthesize browser = _browser;
 @synthesize socket = _socket;
 @synthesize messageBroker = _messageBroker;
+@synthesize delegate = _delegate;
 
 static ClientController *_sharedClientController = nil;
 
@@ -59,10 +60,10 @@ static ClientController *_sharedClientController = nil;
 
 #pragma mark Instance Methods
 
--(void) connect
+-(void) connectToService:(NSNetService *) aService
 {
     
-    NSNetService *remoteService = [_services lastObject];
+    NSNetService *remoteService = aService;
     remoteService.delegate = self;
     [remoteService resolveWithTimeout:0];
     
@@ -119,12 +120,24 @@ static ClientController *_sharedClientController = nil;
 -(void)netServiceBrowser:(NSNetServiceBrowser *)aBrowser didFindService:(NSNetService *)aService moreComing:(BOOL)more 
 {
     [_services addObject:aService];
+    
+    if(_delegate && [_delegate respondsToSelector:@selector(didFindService:)]){
+    
+        [_delegate didFindService:aService];
+    }
 }
 
 -(void)netServiceBrowser:(NSNetServiceBrowser *)aBrowser didRemoveService:(NSNetService *)aService moreComing:(BOOL)more 
 {
-    [_services removeObject:aService];
+    
     if ( aService == self.connectedService ) isConnected = NO;
+    
+    if(_delegate && [_delegate respondsToSelector:@selector(didRemoveService:)]){
+        
+        [_delegate didRemoveService:aService];
+    }
+    
+    [_services removeObject:aService];
 }
 
 #pragma mark Net Service Delegate Methods

@@ -112,7 +112,9 @@
 	
 	// Run the intro Scene
     _sharedClientController = [ClientController sharedClientController];
-	[[CCDirector sharedDirector] runWithScene: [PlayerSelectionScene node]];
+    PlayerSelectionScene *theScene = [PlayerSelectionScene node];
+    _sharedClientController.delegate = theScene.layer;
+	[[CCDirector sharedDirector] runWithScene: theScene];
 }
 
 
