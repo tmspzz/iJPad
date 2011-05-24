@@ -31,7 +31,7 @@
 	HelloWorldLayer *layer = [HelloWorldLayer node];
 	
 	// add layer as a child to scene
-	[scene addChild: layer];
+	[scene addChild:layer z:0 tag:1];
     
 	// return the scene
 	return scene;
@@ -75,7 +75,7 @@
     
     if(_delegate && [_delegate respondsToSelector:@selector(willSendMessageWihActionType: forPad: withAction:)]){
         
-        [_delegate willSendMessageWihActionType:kActionTypeButton forPad:pad withAction:direction];
+        [_delegate willSendMessageWihActionType:kActionTypeMove forPad:pad withAction:direction];
         
     }
 

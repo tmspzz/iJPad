@@ -46,6 +46,7 @@
 @synthesize toggleItemP1 = _toggleItemP1;
 @synthesize toggleItemP2 = _toggleItemP2;
 @synthesize gameListMenu = _gameListMenu;
+@synthesize controllerScene = _controllerScene;
 
 @synthesize label = _label;
 
@@ -163,7 +164,13 @@
         
         [[ClientController sharedClientController] connectToService:[services objectAtIndex:menuItem.tag]];
         
+        self.controllerScene = [HelloWorldLayer scene];
+        HelloWorldLayer *layer = (HelloWorldLayer *)[_controllerScene getChildByTag:1];
+        layer.hud.pad.tag = selectedPlayer;
+        [[CCDirector sharedDirector] replaceScene:_controllerScene];
+        
     }
+    
 }
 
 #pragma mark ClientController Delegate Methods
@@ -217,6 +224,7 @@
     self.togglePlayerMenu = nil;
     self.controlMenu = nil;
     self.gameListMenu = nil;
+    self.controllerScene = nil;
     
     self.label = nil;
     [super dealloc];

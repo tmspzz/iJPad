@@ -381,7 +381,7 @@
 		8A5F049E1383D5890075619D /* Pad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pad.m; sourceTree = "<group>"; };
 		8A5F04A01383D5940075619D /* PadProtocolDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PadProtocolDelegate.h; sourceTree = "<group>"; };
 		8A5F04A11383D5A50075619D /* HUDProtocolDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUDProtocolDelegate.h; sourceTree = "<group>"; };
-		8A5F04A21383D5A50075619D /* HUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUD.h; sourceTree = "<group>"; };
+		8A5F04A21383D5A50075619D /* HUD.h */ = {isa = PBXFileReference; fileEncoding = 4; path = HUD.h; sourceTree = "<group>"; };
 		8A5F04A31383D5A50075619D /* HUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUD.m; sourceTree = "<group>"; };
 		8A5F04A51383DBA10075619D /* jumpButtonN.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jumpButtonN.png; sourceTree = "<group>"; };
 		8A5F04A61383DBA10075619D /* jumpButtonS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jumpButtonS.png; sourceTree = "<group>"; };

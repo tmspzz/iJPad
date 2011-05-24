@@ -74,6 +74,8 @@ static ClientController *_sharedClientController = nil;
     [self.browser searchForServicesOfType:@"_tommyBros._tcp." inDomain:@""];
 }
 
+#pragma mark TBActionPassing Protocol Delegate
+
 -(void) willSendMessageWihActionType:(int) msgActionType forPad:(int) padNumber withAction:(int) action {
     
     TBMessage *newMessage = [TBMessage messageWithActionType: msgActionType forPad:padNumber withAction:action];
@@ -147,7 +149,7 @@ static ClientController *_sharedClientController = nil;
     NSError *error;
     self.connectedService = service;
     self.socket = [[[AsyncSocket alloc] initWithDelegate:self] autorelease];
-    NSAssert(_socket == nil, @"Failed to allocate AsyncSocket");
+    NSAssert(_socket != nil, @"Failed to allocate AsyncSocket");
     [self.socket connectToAddress:service.addresses.lastObject error:&error];
    
 }

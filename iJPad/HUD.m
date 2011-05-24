@@ -55,7 +55,7 @@ static HUD *_sharedHUD = nil;
         self.coins = [CCLabelTTF labelWithString:@"Coins: 0" fontName:@"Verdana-Bold" fontSize:32];
         _coins.position = ccp(_coins.contentSize.width, winSize.height - _coins.contentSize.height/2);
         
-        self.pad = [Pad padWithFile:@"padP1.png" tag:kPadP1];
+        self.pad = [Pad padWithFile:@"padP1.png" tag:KPadNONE];
         
         self.jumpButton = [CCMenuItemImage itemFromNormalImage:@"jumpButtonN.png" selectedImage:@"jumpButtonS.png" target:self selector:@selector(jumpAction)];
 
@@ -81,6 +81,16 @@ static HUD *_sharedHUD = nil;
         
         [delegate jumpActionForPad:kPadP1];
         
+    }
+
+}
+
+- (void) setPadNumber:(int) padNumber {
+    
+    if(padNumber != KPadNONE){
+
+    self.pad.tag = padNumber;
+    
     }
 
 }

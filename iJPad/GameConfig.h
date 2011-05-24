@@ -25,6 +25,7 @@
 
 #define kPadP1 1
 #define kPadP2 2
+#define KPadNONE -1
 
 #define kCenterTollerance 0.3f
 

@@ -9,6 +9,7 @@
 #import "cocos2d.h"
 #import "GameConfig.h"
 #import "ClientControllerProtocolDelegate.h"
+#import "HelloWorldLayer.h"
 
 @interface PlayerSelectionLayer : CCLayerColor <ClientControllerProtocolDelegate>{
     CCLabelTTF *_label;
@@ -24,6 +25,8 @@
     CCMenuItem *_searchItem;
     CCMenuItemToggle *_toggleItemP1;
     CCMenuItemToggle *_toggleItemP2;
+    CCScene *_controllerScene;
+    
     short int selectedPlayer;
     
 }
@@ -38,6 +41,7 @@
 @property (nonatomic, retain) CCMenu *togglePlayerMenu;
 @property (nonatomic, retain) CCMenu *controlMenu;
 @property (nonatomic, retain) CCMenu *gameListMenu;
+@property (nonatomic, retain) CCScene *controllerScene;
 
 
 - (void) toggleButtonP1;
