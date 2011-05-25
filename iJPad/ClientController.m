@@ -65,7 +65,7 @@ static ClientController *_sharedClientController = nil;
     
     NSNetService *remoteService = aService;
     remoteService.delegate = self;
-    [remoteService resolveWithTimeout:0];
+    [remoteService resolveWithTimeout:30];
     
 }
 
@@ -108,9 +108,11 @@ static ClientController *_sharedClientController = nil;
     
     TBMessageBroker *newBroker = [[[TBMessageBroker alloc] initWithAsyncSocket:sock] autorelease];
     [sock release];
-    newBroker.delegate = self;
-    self.messageBroker = newBroker;
-    isConnected = YES;
+    if(sock.isConnected){
+        newBroker.delegate = self;
+        self.messageBroker = newBroker;
+        isConnected = YES;
+    }
 }
 
 -(void)onSocketDidDisconnect:(AsyncSocket *)sock {

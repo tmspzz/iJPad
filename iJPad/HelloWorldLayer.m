@@ -55,6 +55,7 @@
         _hud.attempts.position = ccp(winSize.width-128, winSize.height-32);
 
 	}
+    
 	return self;
 }
 

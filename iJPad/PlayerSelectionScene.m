@@ -167,6 +167,7 @@
         self.controllerScene = [HelloWorldLayer scene];
         HelloWorldLayer *layer = (HelloWorldLayer *)[_controllerScene getChildByTag:1];
         layer.hud.pad.tag = selectedPlayer;
+        layer.delegate = [ClientController sharedClientController];
         [[CCDirector sharedDirector] replaceScene:_controllerScene];
         
     }

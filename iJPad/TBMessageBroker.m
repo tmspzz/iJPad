@@ -28,7 +28,7 @@ static const float SocketTimeout = -1.0;
             self.socket = newSocket;
             [_socket setDelegate:self];
             self.messageQueue = [NSMutableArray arrayWithCapacity:2];
-            [_socket readDataToLength:MessageHeaderSize withTimeout:SocketTimeout tag:0];
+            //[_socket readDataToLength:MessageHeaderSize withTimeout:SocketTimeout tag:0];
         }
         else {
             NSLog(@"Could not change delegate of socket");
@@ -42,13 +42,16 @@ static const float SocketTimeout = -1.0;
 
 - (void) sendMessage:(TBMessage *) newMessage{
 
-    [_messageQueue addObject:newMessage];
-    NSData *messageData = [NSKeyedArchiver archivedDataWithRootObject:newMessage];
-    UInt64 header[1];
-    header[0] = [messageData length]; 
-    header[0] = CFSwapInt64HostToLittle(header[0]);  // Send header in little endian byte order
-    [_socket writeData:[NSData dataWithBytes:header length:MessageHeaderSize] withTimeout:SocketTimeout tag:(long)0];
-    [_socket writeData:messageData withTimeout:SocketTimeout tag:(long)1];
+    if(_socket.isConnected){
+        
+        [_messageQueue addObject:newMessage];
+        NSData *messageData = [NSKeyedArchiver archivedDataWithRootObject:newMessage];
+        UInt64 header[1];
+        header[0] = [messageData length]; 
+        header[0] = CFSwapInt64HostToLittle(header[0]);  // Send header in little endian byte order
+        [_socket writeData:[NSData dataWithBytes:header length:MessageHeaderSize] withTimeout:SocketTimeout tag:(long)0];
+        [_socket writeData:messageData withTimeout:SocketTimeout tag:(long)1];
+    }
 
 }
 
@@ -74,6 +77,19 @@ static const float SocketTimeout = -1.0;
     else {
         NSLog(@"Unknown tag in read of socket data %ld", tag);
     }
+}
+
+- (void)onSocket:(AsyncSocket *)sender willDisconnectWithError:(NSError *)error{
+    
+    NSLog(@"AsyncScoket willDisconnectWithError:%@", error);
+    
+}
+
+
+-(void) onSocketDidDisconnect:(AsyncSocket *)sock{
+    
+    NSLog(@"TBMessageBroker: SOCKET DISCONNECTED!!!");
+    
 }
 
 
