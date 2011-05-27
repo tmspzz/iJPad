@@ -56,9 +56,10 @@ static HUD *_sharedHUD = nil;
         _coins.position = ccp(_coins.contentSize.width, winSize.height - _coins.contentSize.height/2);
         
         self.pad = [Pad padWithFile:@"padP1.png" tag:KPadNONE];
+        self.pad.scale = 1.5;
         
         self.jumpButton = [CCMenuItemImage itemFromNormalImage:@"jumpButtonN.png" selectedImage:@"jumpButtonS.png" target:self selector:@selector(jumpAction)];
-
+        self.jumpButton.scale = 2;
         
         self.buttonsMenu = [CCMenu menuWithItems:_jumpButton, nil];
         
@@ -79,7 +80,7 @@ static HUD *_sharedHUD = nil;
 
     if(delegate && [delegate respondsToSelector:@selector(jumpActionForPad:)]){
         
-        [delegate jumpActionForPad:kPadP1];
+        [delegate jumpActionForPad:self.pad.tag];
         
     }
 
