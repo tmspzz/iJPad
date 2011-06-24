@@ -62,6 +62,7 @@ static HUD *_sharedHUD = nil;
         self.jumpButton.scale = 2;
         
         self.buttonsMenu = [CCMenu menuWithItems:_jumpButton, nil];
+        self.buttonsMenu.triggerMode = kCCMenuTriggerModeOnPress;
         
         _pad.delegate = self;
 

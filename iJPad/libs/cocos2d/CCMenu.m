@@ -45,7 +45,7 @@ enum {
 
 @implementation CCMenu
 
-@synthesize opacity = opacity_, color = color_;
+@synthesize opacity = opacity_, color = color_, triggerMode = triggerMode_;
 
 - (id) init
 {
@@ -109,6 +109,7 @@ enum {
 		
 		selectedItem_ = nil;
 		state_ = kCCMenuStateWaiting;
+        triggerMode_ = kCCMenuTriggerModeOnRelease;
 	}
 	
 	return self;
@@ -178,6 +179,10 @@ enum {
 	
 	if( selectedItem_ ) {
 		state_ = kCCMenuStateTrackingTouch;
+        
+        if(triggerMode_ == kCCMenuTriggerModeOnPress)
+            [selectedItem_ activate];
+        
 		return YES;
 	}
 	return NO;
@@ -188,7 +193,8 @@ enum {
 	NSAssert(state_ == kCCMenuStateTrackingTouch, @"[Menu ccTouchEnded] -- invalid state");
 	
 	[selectedItem_ unselected];
-	[selectedItem_ activate];
+    if(triggerMode_ == kCCMenuTriggerModeOnRelease)
+        [selectedItem_ activate];
 	
 	state_ = kCCMenuStateWaiting;
 }
